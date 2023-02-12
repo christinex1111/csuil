@@ -3,25 +3,27 @@ import java.util.List;
 
 public class countingBits {
     public static int[] countBits(int n) {
-        List <String> count = new ArrayList<>();
-        int remainder;
-        int j;
-        if (n <= 1) {
-            count.add(Integer.toString(n));
-        }
-
-        for (int i = 2; i <= n; i++) {
-            count.add(Integer.toBinaryString(i));
-        }
-
-        while (count.get(j) > 0) {
-            for (int j = 0; j < count.get(element).length(); j++) {
-                if ()
+        int[] countDup = {};
+        List <Integer> count = new ArrayList<>();
+        count.add(0);
+        int pow = 1;
+        for (int i = 1; i <= n; i++) {
+            if (pow * 2 == i) {
+                pow = i;
+            } else {
+                count.add(count.get(i - pow));
             }
         }
+
+        for (int j = 0; j < count.size(); j++) {
+            countDup[j] = count.get(j);
+        }
+
+        return countDup;
     }
     
     public static void main(String[] args) {
         int n = 2;
+        System.out.println(countBits(n));
     }
 }
