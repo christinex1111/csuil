@@ -3,3 +3,7 @@
 2
 -3
 4
+
+if (entry.getKey() == split[i]) {
+                    nums.add(entry.getValue());
+                }
